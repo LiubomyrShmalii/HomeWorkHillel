@@ -5,7 +5,6 @@
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #eee;
-  /* background-color: aqua; */
 }
 
 .pizza_image {
@@ -36,6 +35,12 @@
   font-weight: bold;
 }
 
+.cart_controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .add_to_cart {
   background-color: #FDB913;
   color: white;
@@ -48,4 +53,29 @@
 
 .add_to_cart:hover {
   background-color: #e5a700;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.counter button {
+  background-color: #FDB913;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter span {
+  font-weight: bold;
+  font-size: 1rem;
 }

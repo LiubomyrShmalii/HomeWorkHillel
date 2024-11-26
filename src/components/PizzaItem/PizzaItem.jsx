@@ -1,10 +1,21 @@
+import { useState } from "react";
 import s from "./PizzaItem.module.css";
+import Button from "../Button/Button";
 
 function PizzaItem(props) {
   const { name, unitPrice, imageUrl, ingredients, soldOut } = props;
+  const [count, setCount] = useState(0);
 
-  const rigthIngredients = ingredients.map((el) => el.charAt(0).toUpperCase() + el.slice(1)).join(", ");
-  console.log(rigthIngredients);
+  const rigthIngredients = ingredients
+    .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
+    .join(", ");
+
+  const increment = () => setCount((prevCount) => prevCount + 1);
+  const decrement = () => {
+    if (count > 0) {
+      setCount((prevCount) => prevCount - 1);
+    }
+  };
 
   return (
     <div className={s.pizza_item}>
@@ -20,7 +31,25 @@ function PizzaItem(props) {
         )}
       </div>
 
-      {!soldOut && <button className={s.add_to_cart}>ADD TO CART</button>}
+      {!soldOut && (
+        <div className={s.cart_controls}>
+          {count === 0 ? (
+            <div onClick={increment}>
+              <Button />
+            </div>
+          ) : (
+            <div className={s.counter}>
+              <button className={s.decrement} onClick={decrement}>
+                -
+              </button>
+              <span>{count}</span>
+              <button className={s.increment} onClick={increment}>
+                +
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
