@@ -1,9 +1,9 @@
-import s from "./Button.module.css";
-
-function Button() {
+function Button({ onClick, className, text }) {
   return (
-    <button className={s.btn}>Start Order</button>
-  )
+    <button onClick={onClick} className={className}>
+      {text}
+    </button>
+  );
 }
 
-export default Button
+export default Button;

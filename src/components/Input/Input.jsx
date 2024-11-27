@@ -1,8 +1,6 @@
-import s from "./Input.module.css";
-
-function Input() {
+function Input({ onChange, className, type, placeholder, value }) {
   return (
-    <input type="text" placeholder="Your full name"   className={s.input} />
+    <input type={type} placeholder={placeholder} className={className} onChange={onChange} value={value}/>
   )
 }
 

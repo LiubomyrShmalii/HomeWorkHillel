@@ -61,12 +61,12 @@
   gap: 0.5rem;
 }
 
-.counter button {
-  background-color: #FDB913;
-  color: white;
+.counter_button {
+  background-color: #e5a700;
+  color: rgb(255, 255, 255);
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   cursor: pointer;
   font-weight: bold;
@@ -75,7 +75,7 @@
   justify-content: center;
 }
 
-.counter span {
+.counter-span {
   font-weight: bold;
   font-size: 1rem;
 }

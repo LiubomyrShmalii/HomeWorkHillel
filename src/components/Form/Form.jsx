@@ -21,12 +21,8 @@ const Form = () => {
         <h1>The best pizza.</h1>
         <p className={s.subtitle}>Straight out of the oven, straight to you.</p>
         <p className={s.welcome}>👉 Welcome! Please start by telling us your name:</p>
-        <div onChange={handleInputChange}>
-          <Input />
-        </div>
-        <div onClick={handleButtonClick}>
-          <Button />
-        </div>
+          <Input onChange={handleInputChange} className={s.input}/>
+          <Button onClick={handleButtonClick} className={s.btn} text="Start Order"/>
       </form>
     </div>
   );

@@ -34,18 +34,12 @@ function PizzaItem(props) {
       {!soldOut && (
         <div className={s.cart_controls}>
           {count === 0 ? (
-            <div onClick={increment}>
-              <Button />
-            </div>
+            <Button onClick={increment} className={s.add_to_cart} text="ADD TO CART" />
           ) : (
             <div className={s.counter}>
-              <button className={s.decrement} onClick={decrement}>
-                -
-              </button>
+              <Button onClick={decrement} className={s.counter_button} text='-' />
               <span>{count}</span>
-              <button className={s.increment} onClick={increment}>
-                +
-              </button>
+              <Button onClick={increment} className={s.counter_button} text='+' />
             </div>
           )}
         </div>
