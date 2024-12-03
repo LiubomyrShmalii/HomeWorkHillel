@@ -2,9 +2,11 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import s from './Form.module.css';
+import { useNavigate } from 'react-router';
 
 const Form = () => {
   const [userName, setUserName] = useState('');
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setUserName(e.target.value);
@@ -12,7 +14,7 @@ const Form = () => {
 
   const handleButtonClick = (e) => {
     e.preventDefault();
-    console.log(userName);
+    navigate("/menu");
   };
 
   return (

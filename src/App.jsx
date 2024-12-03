@@ -1,17 +1,21 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
-// import Cart from "./components/Cart/Cart";
-// import Form from "./components/Form/Form";
-import Header from "./components/Header/Header";
-import Menu from "./components/Menu/Menu";
+import MainPage from "./pages/MainPage";
+import MenuPage from "./pages/MenuPage";
+import PageNotFound from "./pages/PageNotFound";
+import CartPage from "./pages/CartPage";
+
 
 function App() {
   return (
-    <>
-      <Header />
-      {/* <Form /> */}
-      <Menu />
-      {/* <Cart /> */}
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </div>
   );
 }
 

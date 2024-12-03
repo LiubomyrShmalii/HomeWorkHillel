@@ -12,6 +12,12 @@
   font-weight: bold;
 }
 
+.search_and_user{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .search_bar {
   background-color: #ffe084;
   border: none;
@@ -22,5 +28,13 @@
 }
 
 .username {
+  font-weight: bold;
+}
+.link{
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-family: monospace;
+  font-size: 1.25rem;
   font-weight: bold;
 }
