@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import s from './Form.module.css';
 import { useNavigate } from 'react-router';
+import { UserNameContext } from '../../App';
 
 const Form = () => {
-  const [userName, setUserName] = useState('');
+
+  const { userName, setUserName } = useContext(UserNameContext)
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {

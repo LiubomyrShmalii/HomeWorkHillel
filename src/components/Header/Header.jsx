@@ -1,9 +1,13 @@
 import { NavLink } from "react-router";
 import s from "./Header.module.css";
+import { useContext } from "react";
+import { UserNameContext } from "../../App";
 
 const enterName = true;
 
 const Header = () => {
+  const { userName, setUserName } = useContext(UserNameContext)
+
   return (
     <header className={s.header}>
       <div className={s.logo}>PIZZA DAY</div>
@@ -23,7 +27,7 @@ const Header = () => {
               className={s.search_bar}
               placeholder="Search for the order #"
             />
-            <div className={s.username}>LIUBOMYR</div>
+            <div className={s.username}>{userName}</div>
           </div>
         </>
       )}
