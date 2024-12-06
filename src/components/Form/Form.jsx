@@ -1,21 +1,23 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 import s from './Form.module.css';
 import { useNavigate } from 'react-router';
-import { UserNameContext } from '../../App';
+import { UserNameContext } from "../../context/UserNameContext";
 
 const Form = () => {
 
-  const { userName, setUserName } = useContext(UserNameContext)
+  const { setUserName } = useContext(UserNameContext)
   const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
-    setUserName(e.target.value);
+    setInputValue(e.target.value);
   };
 
   const handleButtonClick = (e) => {
     e.preventDefault();
+    setUserName(inputValue);
     navigate("/menu");
   };
 

@@ -1,7 +1,8 @@
 import { NavLink } from "react-router";
 import s from "./Header.module.css";
 import { useContext } from "react";
-import { UserNameContext } from "../../App";
+import { UserNameContext } from "../../context/UserNameContext";
+
 
 const enterName = true;
 
